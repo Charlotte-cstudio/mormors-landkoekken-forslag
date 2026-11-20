@@ -38,6 +38,10 @@ html{scroll-behavior:smooth}
 body{margin:0;background:#FCFCFA}
 img{max-width:100%}
 .v-mobile{display:none}
+.ml-day.is-today{background:rgba(255,255,255,0.1);margin:0 -10px;padding-left:10px !important;padding-right:10px !important;border-radius:6px;border-bottom-color:transparent !important}
+.ml-day.is-today > span:first-child{font-weight:700}
+.ml-day.is-today > span:first-child::after{content:" · i dag";color:#F0C9A6;font-weight:700}
+@media (min-width: 900px) and (max-width: 1100px){.ml-hours{grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important}.ml-hours > div:last-child{grid-column:1 / -1;border-left:none !important;border-top:1px solid rgba(255,255,255,0.16);display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}.ml-hours > div:last-child > span:first-child{grid-column:1 / -1}}
 @media (max-width: 899px){
   .v-desktop{display:none}
   .v-mobile{display:block}
@@ -99,22 +103,63 @@ img{max-width:100%}
 
 <div aria-hidden="true" style="height: 24px"></div>
 
-<section aria-label="Åbningstider og sæson" style="padding: 0 24px">
-<div style="max-width: 1232px; margin: 0 auto; border-radius: 24px; background: #2B5761; color: #FFFFFF; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); overflow: hidden">
-<div style="padding: 40px 44px; display: flex; flex-direction: column; gap: 6px">
+<section id="aabningstider" aria-label="Åbningstider og sæson" style="padding: 0 24px; scroll-margin-top: 100px">
+<div class="ml-hours" style="max-width: 1232px; margin: 0 auto; border-radius: 24px; background: #2B5761; color: #FFFFFF; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr) minmax(0, 1.1fr); overflow: hidden">
+<div style="padding: 36px 40px; display: flex; flex-direction: column; gap: 14px">
 <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #BFD6D9">Åbningstider</span>
-<span style="font-family: 'Young Serif', Georgia, serif; font-size: 24px">Fredag–søndag 11–21</span>
-<span style="font-size: 15px; color: #D7E5E7">Mandag–torsdag lukket</span>
+<div style="display: flex; flex-direction: column">
+
+<div class="ml-day" data-wd="1" style="display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Mandag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="2" style="display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Tirsdag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="3" style="display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Onsdag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="4" style="display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Torsdag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="5" style="display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Fredag</span><span style="font-weight: 700">11.00–21.00</span></div>
+
+<div class="ml-day" data-wd="6" style="display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Lørdag</span><span style="font-weight: 700">11.00–21.00</span></div>
+
+<div class="ml-day" data-wd="0" style="display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Søndag</span><span style="font-weight: 700">11.00–21.00</span></div>
+
 </div>
-<div style="padding: 40px 44px; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid rgba(255,255,255,0.16)">
+</div>
+<div style="padding: 36px 40px; display: flex; flex-direction: column; gap: 14px; border-left: 1px solid rgba(255,255,255,0.16)">
 <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #BFD6D9">Sæson</span>
-<span style="font-family: 'Young Serif', Georgia, serif; font-size: 24px">[Måned] – [måned]</span>
-<span style="font-size: 15px; color: #D7E5E7">Selskaber og mad ud af huset hele året</span>
+
+<div style="display: flex; flex-direction: column; gap: 3px">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px">Sommersæson</span>
+<span style="font-size: 14px; font-weight: 700; color: #F0C9A6">26. juni – 9. august</span>
+<span style="font-size: 14px; line-height: 1.5; color: #D7E5E7">Åbent alle dage 11.00–21.00 i sommerferien</span>
 </div>
-<div style="padding: 40px 44px; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid rgba(255,255,255,0.16)">
+
+<div style="display: flex; flex-direction: column; gap: 3px">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px">Vinterpause</span>
+<span style="font-size: 14px; font-weight: 700; color: #F0C9A6">4. januar – 28. februar</span>
+<span style="font-size: 14px; line-height: 1.5; color: #D7E5E7">Restauranten holder lukket – selskaber og mad ud af huset efter aftale</span>
+</div>
+
+<span style="margin-top: auto; font-size: 14px; color: #D7E5E7">Selskaber og mad ud af huset hele året.</span>
+</div>
+<div style="padding: 36px 40px; display: flex; flex-direction: column; gap: 14px; border-left: 1px solid rgba(255,255,255,0.16)">
 <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #BFD6D9">Særlige lukkedage</span>
-<span style="font-family: 'Young Serif', Georgia, serif; font-size: 24px">[Dato]</span>
-<span style="font-size: 15px; color: #D7E5E7">Lukket pga. privat arrangement</span>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.12)">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 19px">24.–26. december</span>
+<span style="font-size: 14px; color: #D7E5E7">Lukket i julen</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.12)">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 19px">31. december</span>
+<span style="font-size: 14px; color: #D7E5E7">Kun afhentning af nytårsmenu kl. 12–15</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.12)">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 19px">1. januar</span>
+<span style="font-size: 14px; color: #D7E5E7">Lukket nytårsdag</span>
+</div>
+
 </div>
 </div>
 </section>
@@ -1271,10 +1316,8 @@ img{max-width:100%}
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
 <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #E0A877; margin-bottom: 10px">Åbningstider</span>
-<span style="color: #F4EFE8">Fredag–søndag</span>
-<span>11.00–21.00</span>
-<span style="margin-top: 8px; color: #F4EFE8">Mandag–torsdag</span>
-<span>Lukket</span>
+<span style="color: #F4EFE8">Mandag–torsdag</span><span style="margin-bottom: 8px">Lukket</span><span style="color: #F4EFE8">Fredag–søndag</span><span style="margin-bottom: 8px">11.00–21.00</span>
+<a class="ml-ul" href="#aabningstider" style="align-self: flex-start; color: #E0A877; font-weight: 700">Sæson og lukkedage</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px; font-size: 15px">
 <span style="font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #E0A877; margin-bottom: 10px">Find os</span>
@@ -1352,11 +1395,46 @@ img{max-width:100%}
 </section>
 
 <section aria-label="Åbningstider" style="padding: 14px 10px 0">
-<div style="border-radius: 20px; background: #2B5761; color: #FFFFFF; padding: 6px 20px">
-<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.16)"><span style="color: #BFD6D9; font-size: 14px">Åbent</span><span style="font-weight: 700; text-align: right">Fre–søn 11.00–21.00</span></div>
-<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.16)"><span style="color: #BFD6D9; font-size: 14px">Lukket</span><span style="text-align: right">Mandag–torsdag</span></div>
-<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.16)"><span style="color: #BFD6D9; font-size: 14px">Sæson</span><span style="text-align: right">[Måned] – [måned]</span></div>
-<div style="display: flex; justify-content: space-between; gap: 12px; padding: 14px 0"><span style="color: #BFD6D9; font-size: 14px">Lukkedage</span><span style="text-align: right">[Dato]</span></div>
+<div style="border-radius: 20px; background: #2B5761; color: #FFFFFF; padding: 20px 20px 10px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #BFD6D9">Åbningstider</span>
+<div style="display: flex; flex-direction: column">
+
+<div class="ml-day" data-wd="1" style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Mandag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="2" style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Tirsdag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="3" style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Onsdag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="4" style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Torsdag</span><span style="color: #BFD6D9">Lukket</span></div>
+
+<div class="ml-day" data-wd="5" style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Fredag</span><span style="font-weight: 700">11.00–21.00</span></div>
+
+<div class="ml-day" data-wd="6" style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Lørdag</span><span style="font-weight: 700">11.00–21.00</span></div>
+
+<div class="ml-day" data-wd="0" style="display: flex; justify-content: space-between; gap: 12px; padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,0.12); font-size: 15px"><span>Søndag</span><span style="font-weight: 700">11.00–21.00</span></div>
+
+</div>
+<span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #BFD6D9; margin-top: 12px">Sæson</span>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.12)">
+<span style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap"><strong style="font-size: 15px">Sommersæson</strong><span style="font-size: 13px; font-weight: 700; color: #F0C9A6">26. juni – 9. august</span></span>
+<span style="font-size: 14px; line-height: 1.45; color: #D7E5E7">Åbent alle dage 11.00–21.00 i sommerferien</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.12)">
+<span style="display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap"><strong style="font-size: 15px">Vinterpause</strong><span style="font-size: 13px; font-weight: 700; color: #F0C9A6">4. januar – 28. februar</span></span>
+<span style="font-size: 14px; line-height: 1.45; color: #D7E5E7">Restauranten holder lukket – selskaber og mad ud af huset efter aftale</span>
+</div>
+
+<span style="font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #BFD6D9; margin-top: 12px">Særlige lukkedage</span>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.12)"><strong style="font-size: 15px">24.–26. december</strong><span style="font-size: 14px; color: #D7E5E7">Lukket i julen</span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.12)"><strong style="font-size: 15px">31. december</strong><span style="font-size: 14px; color: #D7E5E7">Kun afhentning af nytårsmenu kl. 12–15</span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,0.12)"><strong style="font-size: 15px">1. januar</strong><span style="font-size: 14px; color: #D7E5E7">Lukket nytårsdag</span></div>
+
+<span style="font-size: 13px; color: #D7E5E7; padding: 4px 0 8px">Selskaber og mad ud af huset hele året.</span>
 </div>
 </section>
 
@@ -2579,6 +2657,13 @@ img{max-width:100%}
   if(openDay&&h>=11&&h<21){head='Åbent nu';sub=' · køkkenet har åbent til kl. 21.00';dot='#3E8E5A';ring='rgba(62,142,90,0.2)'}
   else if(openDay&&h<11){head='Vi åbner i dag kl. 11.00';sub='';dot='#A85F33';ring='rgba(168,95,51,0.2)'}
   else{head='Lukket lige nu';sub=(wd===5||wd===6)?' · vi ses i morgen kl. 11.00':' · vi ses igen fredag kl. 11.00';dot='#A85F33';ring='rgba(168,95,51,0.2)'}
+  // særlige lukkedage (samme data som i WordPress)
+  var md=(now.getMonth()+1)+'-'+now.getDate();
+  var special={'12-24':'Lukket i julen','12-25':'Lukket i julen','12-26':'Lukket i julen','1-1':'Lukket nytårsdag'};
+  if(special[md]){head='Lukket i dag';sub=' · '+special[md];dot='#A85F33';ring='rgba(168,95,51,0.2)'}
+  if(md==='12-31'){head='Kun afhentning i dag';sub=' · nytårsmenu kl. 12–15';dot='#A85F33';ring='rgba(168,95,51,0.2)'}
+  // marker dagens række i åbningstiderne
+  document.querySelectorAll('.ml-day[data-wd="'+wd+'"]').forEach(function(e){e.classList.add('is-today')});
   document.documentElement.style.setProperty('--status-dot',dot);document.documentElement.style.setProperty('--status-ring',ring);
   document.querySelectorAll('.js-status-head').forEach(function(e){e.textContent=head});
   document.querySelectorAll('.js-status-sub').forEach(function(e){e.textContent=sub});
