@@ -42,7 +42,9 @@ img{max-width:100%}
   .v-desktop{display:none}
   .v-mobile{display:block}
   .m-root{max-width:600px;margin:0 auto;padding-bottom:84px}
-  .m-root > nav[aria-label="Hurtige handlinger"]{position:fixed !important;left:0;right:0;bottom:0;max-width:600px;margin:0 auto}
+  .m-root > nav[aria-label="Hurtige handlinger"]{position:fixed !important;left:0;right:0;bottom:0;max-width:600px;margin:0 auto;transform:translateY(110%);opacity:0;visibility:hidden;transition:transform .32s ease,opacity .32s ease,visibility 0s linear .32s;box-shadow:0 -10px 24px rgba(28,43,40,0.08);background:#FCFCFA !important}
+  .m-root > nav[aria-label="Hurtige handlinger"].is-shown{transform:none;opacity:1;visibility:visible;transition:transform .32s ease,opacity .32s ease,visibility 0s}
+  @media (prefers-reduced-motion: reduce){.m-root > nav[aria-label="Hurtige handlinger"]{transition:none !important}}
 }
 .preview-bar{position:fixed;right:16px;bottom:16px;z-index:50;background:#1C2B28;color:#F4EFE8;font:600 12px/1.3 'Nunito Sans',sans-serif;padding:8px 14px;border-radius:999px;opacity:.85}
 @media (max-width: 899px){.preview-bar{position:static;display:block;text-align:center;border-radius:0;opacity:1;font-size:11px;padding:6px 12px}}
@@ -310,33 +312,146 @@ img{max-width:100%}
 
 </div>
 </div>
-<div style="margin-top: 56px; padding-top: 40px; border-top: 1px solid #E4EAEA; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; align-items: center; gap: 14px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; color: #A85F33; white-space: nowrap">Drikkevarer</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 48px">
+<div style="margin-top: 64px; padding-top: 44px; border-top: 1px solid #E4EAEA; display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; align-items: center; gap: 14px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 30px; color: #1C2B28; white-space: nowrap">Drikkevarer</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; align-items: start">
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Fadøl 0,4 l</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">55,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 40px">
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Fadøl 0,3 l</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">40,-</span></div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Øl</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Øl på flaske</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">fra 35,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Fadøl 0,4 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Odense Pilsner eller Classic</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Alkoholfri øl</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">35,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Fadøl 0,3 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Odense Pilsner eller Classic</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Husets vin, glas</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">55,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Special porter</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">65,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Med hyldebær fra Fantastbryg</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Husets vin, flaske</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">245,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Gambrinus</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Cava, flaske</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">295,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Hancock</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Sodavand</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">30,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Hancock Black</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">35,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Mormors saft</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">40,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Høker Bajer</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">35,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Kaffe · te</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">25,-</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Royal alkoholfri 0,33 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">35,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Specialkaffe</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">45,-</span></div>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Irish coffee</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">65,-</span></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 40px">
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Vin</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663">Glas / flaske</span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Husets rødvin</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55,- / 245,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Tinto</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Husets hvidvin</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55,- / 245,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Blanco</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Husets rosé</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55,- / 245,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Rosé</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Perscarpa Primitivo</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">315,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Italien · flaske</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Perscarpa Bianca</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">315,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Italien · flaske</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Dignitat Cava, semi seco</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">295,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Mousserende · Spanien · flaske</span>
+</div>
+
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 40px">
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Kolde drikke</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Mormors saft</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Rabarber, solbær, hyldeblomst, hindbær/lime eller æblemost</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Sodavand</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">30,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Coca-Cola, Pepsi Max, Hancock</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Kande vand</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">30,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Varme drikke</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Filterkaffe</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">25,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Te</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">25,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Specialkaffe</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">45,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Irish coffee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">65,-</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
 
 </div>
 </div>
@@ -522,33 +637,146 @@ img{max-width:100%}
 
 </div>
 </div>
-<div style="margin-top: 56px; padding-top: 40px; border-top: 1px solid #E4EAEA; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; align-items: center; gap: 14px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; color: #A85F33; white-space: nowrap">Getränke</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 48px">
+<div style="margin-top: 64px; padding-top: 44px; border-top: 1px solid #E4EAEA; display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; align-items: center; gap: 14px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 30px; color: #1C2B28; white-space: nowrap">Getränke</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; align-items: start">
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Fassbier 0,4 l</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">55 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 40px">
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Fassbier 0,3 l</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">40 kr.</span></div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Bier</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Flaschenbier</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">ab 35 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Fassbier 0,4 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Odense Pilsner oder Classic</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Alkoholfreies Bier</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">35 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Fassbier 0,3 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Odense Pilsner oder Classic</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Hauswein, Glas</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">55 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Spezial-Porter</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">65 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Mit Holunderbeeren von Fantastbryg</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Hauswein, Flasche</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">245 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Gambrinus</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Cava, Flasche</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">295 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Hancock</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Softdrink</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">30 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Hancock Black</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">35 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Omas Saft</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">40 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Høker Bajer</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">35 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Kaffee · Tee</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">25 kr.</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Royal alkoholfrei 0,33 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">35 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Spezialkaffee</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">45 kr.</span></div>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Irish Coffee</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">65 kr.</span></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 40px">
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Wein</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663">Glas / Flasche</span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Rotwein des Hauses</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55 / 245 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Tinto</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Weißwein des Hauses</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55 / 245 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Blanco</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Rosé des Hauses</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">55 / 245 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Rosé</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Perscarpa Primitivo</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">315 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Italien · Flasche</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Perscarpa Bianca</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">315 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Italien · Flasche</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Dignitat Cava, halbtrocken</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">295 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Schaumwein · Spanien · Flasche</span>
+</div>
+
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 40px">
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Kalte Getränke</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Omas Saft</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">40 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Rhabarber, Johannisbeere, Holunderblüte, Himbeere/Limette oder Apfelmost</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Softdrinks</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">30 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Coca-Cola, Pepsi Max, Hancock</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Karaffe Wasser</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">30 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Heiße Getränke</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Filterkaffee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">25 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Tee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">25 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Spezialkaffee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">45 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Irish Coffee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">65 kr.</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
 
 </div>
 </div>
@@ -734,33 +962,146 @@ img{max-width:100%}
 
 </div>
 </div>
-<div style="margin-top: 56px; padding-top: 40px; border-top: 1px solid #E4EAEA; display: flex; flex-direction: column; gap: 24px">
-<div style="display: flex; align-items: center; gap: 14px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; color: #A85F33; white-space: nowrap">Drinks</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 48px">
+<div style="margin-top: 64px; padding-top: 44px; border-top: 1px solid #E4EAEA; display: flex; flex-direction: column; gap: 30px">
+<div style="display: flex; align-items: center; gap: 14px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 30px; color: #1C2B28; white-space: nowrap">Drinks</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px; align-items: start">
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Draught beer 0.4 l</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 55</span></div>
+<div style="display: flex; flex-direction: column; gap: 40px">
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Draught beer 0.3 l</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 40</span></div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Beer</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Bottled beer</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">from DKK 35</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Draught beer 0.4 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 55</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Odense Pilsner or Classic</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Alcohol-free beer</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 35</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Draught beer 0.3 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 40</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Odense Pilsner or Classic</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">House wine, glass</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 55</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Special porter</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 65</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">With elderberries from Fantastbryg</span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">House wine, bottle</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 245</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Gambrinus</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 40</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Cava, bottle</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 295</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Hancock</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 40</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Soft drink</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 30</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Hancock Black</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 35</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Grandma’s cordial</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 40</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Høker Bajer</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 35</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Coffee · tea</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 25</span></div>
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Royal alcohol-free 0.33 l</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 35</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Speciality coffee</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 45</span></div>
+</div>
 
-<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 600">Irish coffee</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap">DKK 65</span></div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 40px">
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Wine</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663">Glass / bottle</span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">House red</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 55 / 245</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Tinto</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">House white</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 55 / 245</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Blanco</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">House rosé</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 55 / 245</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Bodegas Pinoso »Vermandor« Rosé</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Perscarpa Primitivo</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 315</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Italy · bottle</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Perscarpa Bianca</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 315</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Italy · bottle</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Dignitat Cava, semi-dry</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 295</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Sparkling · Spain · bottle</span>
+</div>
+
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 40px">
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Cold drinks</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Grandma’s cordial</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 40</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Rhubarb, blackcurrant, elderflower, raspberry/lime or apple juice</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Soft drinks</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 30</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663">Coca-Cola, Pepsi Max, Hancock</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Jug of water</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 30</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding-bottom: 10px; border-bottom: 1px solid #E6D3C6"><h4 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 22px; color: #A85F33">Hot drinks</h4><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #5B6663"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Filter coffee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 25</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Tea</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 25</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Speciality coffee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 45</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 11px 0; border-bottom: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; gap: 10px; font-size: 15px"><span style="font-weight: 700">Irish coffee</span><span aria-hidden="true" style="flex: 1; min-width: 12px; border-bottom: 1px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="white-space: nowrap; font-family: 'Young Serif', Georgia, serif">DKK 65</span></div>
+<span style="font-size: 13px; line-height: 1.4; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
 
 </div>
 </div>
@@ -974,8 +1315,9 @@ img{max-width:100%}
 <div class="m-root" style="position: relative; background: #FCFCFA; color: #1C2B28; font-family: 'Nunito Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.6">
 
 <header style="position: sticky; top: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 12px 10px 18px; background: rgba(252,252,250,0.96); border-bottom: 1px solid #E4EAEA">
-<a href="#m-top" aria-label="Mormors Landkøkken – til toppen" style="display: flex; align-items: center; min-height: 44px"><img src="logo-moerk.png" alt="Mormors Landkøkken" style="width: 176px; height: auto; display: block"></a>
-<div style="display: flex; gap: 6px">
+<a href="#m-top" aria-label="Mormors Landkøkken – til toppen" style="display: flex; align-items: center; min-height: 44px"><img src="logo-moerk.png" alt="Mormors Landkøkken" style="width: clamp(132px, 42vw, 176px); height: auto; display: block"></a>
+<div style="display: flex; gap: 6px; flex-shrink: 0">
+<a href="https://maps.google.com/?q=Havnevej+17,+6094+Hejls" target="_blank" rel="noopener" aria-label="Find vej til restauranten" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #C9D4D5; color: #1E3A40; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg></a>
 <a href="tel:+4573540000" aria-label="Ring til restauranten" style="width: 44px; height: 44px; border-radius: 999px; background: #A85F33; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
 <button type="button" data-on="toggleNav" aria-label="Luk menu" aria-expanded="true" style="width: 44px; height: 44px; border-radius: 999px; border: 1px solid #C9D4D5; background: transparent; color: #1C2B28; display: flex; align-items: center; justify-content: center; cursor: pointer"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 8h16M4 16h16"></path></svg><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
 </div>
@@ -1217,6 +1559,184 @@ img{max-width:100%}
 </div>
 
 </div>
+<div style="margin: 34px 4px 0; display: flex; align-items: center; gap: 12px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; color: #1C2B28; white-space: nowrap">Drikkevarer</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #D9C4B5"></span></div>
+<div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px">
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Øl</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">8 slags<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Fadøl 0,4 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Odense Pilsner eller Classic</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Fadøl 0,3 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Odense Pilsner eller Classic</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Special porter</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">65,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Med hyldebær fra Fantastbryg</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Gambrinus</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Hancock</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Hancock Black</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">35,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Høker Bajer</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">35,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Royal alkoholfri 0,33 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">35,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Vin</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">Glas / flaske<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Husets rødvin</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55,- / 245,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Tinto</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Husets hvidvin</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55,- / 245,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Blanco</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Husets rosé</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55,- / 245,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Rosé</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Perscarpa Primitivo</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">315,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Italien · flaske</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Perscarpa Bianca</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">315,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Italien · flaske</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Dignitat Cava, semi seco</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">295,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Mousserende · Spanien · flaske</span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Kolde drikke</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">3 slags<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Mormors saft</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Rabarber, solbær, hyldeblomst, hindbær/lime eller æblemost</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Sodavand</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">30,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Coca-Cola, Pepsi Max, Hancock</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Kande vand</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">30,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Varme drikke</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">4 slags<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Filterkaffe</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">25,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Te</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">25,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Specialkaffe</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">45,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Irish coffee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">65,-</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
 <p style="margin: 16px 6px 0; font-size: 13px; color: #5B6663; text-align: center">Vil I dele en ret? Ekstra kuvert 25,- · Spørg personalet om allergener</p>
 <a href="/menukort.pdf" target="_blank" rel="noopener" style="margin: 14px auto 0; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; max-width: 290px; border-radius: 999px; border: 1px solid #1E3A40; background: #FFFFFF; color: #1E3A40; text-decoration: none; font-weight: 700; font-size: 15px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>Hent menukortet som PDF</a>
 </section>
@@ -1394,6 +1914,184 @@ img{max-width:100%}
 
 <div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
 <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Kindereis</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">49 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div style="margin: 34px 4px 0; display: flex; align-items: center; gap: 12px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; color: #1C2B28; white-space: nowrap">Getränke</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #D9C4B5"></span></div>
+<div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px">
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Bier</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">8 Sorten<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Fassbier 0,4 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Odense Pilsner oder Classic</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Fassbier 0,3 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Odense Pilsner oder Classic</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Spezial-Porter</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">65 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Mit Holunderbeeren von Fantastbryg</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Gambrinus</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Hancock</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Hancock Black</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">35 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Høker Bajer</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">35 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Royal alkoholfrei 0,33 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">35 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Wein</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">Glas / Flasche<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Rotwein des Hauses</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55 / 245 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Tinto</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Weißwein des Hauses</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55 / 245 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Blanco</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Rosé des Hauses</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">55 / 245 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Rosé</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Perscarpa Primitivo</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">315 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Italien · Flasche</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Perscarpa Bianca</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">315 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Italien · Flasche</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Dignitat Cava, halbtrocken</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">295 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Schaumwein · Spanien · Flasche</span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Kalte Getränke</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">3 Sorten<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Omas Saft</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">40 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Rhabarber, Johannisbeere, Holunderblüte, Himbeere/Limette oder Apfelmost</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Softdrinks</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">30 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Coca-Cola, Pepsi Max, Hancock</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Karaffe Wasser</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">30 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Heiße Getränke</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">4 Sorten<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Filterkaffee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">25 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Tee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">25 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Spezialkaffee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">45 kr.</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Irish Coffee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">65 kr.</span></div>
 
 <span style="font-size: 14px; color: #5B6663"></span>
 </div>
@@ -1589,6 +2287,184 @@ img{max-width:100%}
 </div>
 
 </div>
+<div style="margin: 34px 4px 0; display: flex; align-items: center; gap: 12px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 26px; color: #1C2B28; white-space: nowrap">Drinks</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #D9C4B5"></span></div>
+<div style="margin-top: 12px; display: flex; flex-direction: column; gap: 10px">
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Beer</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">8 kinds<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Draught beer 0.4 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 55</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Odense Pilsner or Classic</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Draught beer 0.3 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 40</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Odense Pilsner or Classic</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Special porter</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 65</span></div>
+
+<span style="font-size: 14px; color: #5B6663">With elderberries from Fantastbryg</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Gambrinus</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 40</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Hancock</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 40</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Hancock Black</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 35</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Høker Bajer</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 35</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Royal alcohol-free 0.33 l</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 35</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Wine</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">Glass / bottle<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">House red</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 55 / 245</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Tinto</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">House white</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 55 / 245</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Blanco</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">House rosé</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 55 / 245</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Bodegas Pinoso »Vermandor« Rosé</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Perscarpa Primitivo</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 315</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Italy · bottle</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Perscarpa Bianca</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 315</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Italy · bottle</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Dignitat Cava, semi-dry</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 295</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Sparkling · Spain · bottle</span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Cold drinks</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">3 kinds<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Grandma’s cordial</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 40</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Rhubarb, blackcurrant, elderflower, raspberry/lime or apple juice</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Soft drinks</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 30</span></div>
+
+<span style="font-size: 14px; color: #5B6663">Coca-Cola, Pepsi Max, Hancock</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Jug of water</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 30</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+<div style="background: #FFFFFF; border-radius: 18px; overflow: hidden; box-shadow: 0 1px 2px rgba(28,43,40,0.05)">
+<button type="button" data-on="toggle" aria-expanded="true" style="width: 100%; min-height: 60px; padding: 0 18px; border: none; background: transparent; display: flex; align-items: center; justify-content: space-between; gap: 12px; font: inherit; color: #1C2B28; text-align: left; cursor: pointer">
+<span style="font-family: 'Young Serif', Georgia, serif; font-size: 21px; color: #A85F33">Hot drinks</span>
+<span style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #5B6663">4 kinds<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 15 6-6 6 6"></path></svg></span>
+</button>
+
+<div style="padding: 2px 18px 18px; display: flex; flex-direction: column">
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Filter coffee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 25</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Tea</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 25</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Speciality coffee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 45</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 2px; padding: 12px 0; border-top: 1px solid #EEF1F1">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 14px"><span style="font-size: 16px; font-weight: 700">Irish coffee</span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 16px; white-space: nowrap">DKK 65</span></div>
+
+<span style="font-size: 14px; color: #5B6663"></span>
+</div>
+
+</div>
+
+</div>
+
+</div>
 <p style="margin: 16px 6px 0; font-size: 13px; color: #5B6663; text-align: center">Sharing a dish? Extra cover DKK 25 · Ask our staff about allergens</p>
 <a href="/menukort.pdf" target="_blank" rel="noopener" style="margin: 14px auto 0; display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; max-width: 290px; border-radius: 999px; border: 1px solid #1E3A40; background: #FFFFFF; color: #1E3A40; text-decoration: none; font-weight: 700; font-size: 15px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"></path><path d="m7 10 5 5 5-5"></path><path d="M5 20h14"></path></svg>Download the menu as PDF</a>
 </section>
@@ -1732,6 +2608,17 @@ img{max-width:100%}
     });
   });
   // mobile menu
+  // mobile quick-action bar: hidden while the hero (with its own CTAs) is in view
+  (function(){
+    var bar=document.querySelector('.v-mobile nav[aria-label="Hurtige handlinger"]');var hero=document.getElementById('m-top');
+    if(!bar||!hero)return;
+    function set(show){bar.classList.toggle('is-shown',show);bar.setAttribute('aria-hidden',show?'false':'true');bar.querySelectorAll('a').forEach(function(a){a.tabIndex=show?0:-1})}
+    if('IntersectionObserver' in window){
+      new IntersectionObserver(function(es){es.forEach(function(e){set(!e.isIntersecting)})},{rootMargin:'-64px 0px 0px 0px',threshold:0}).observe(hero);
+    }else{
+      var f=function(){set(hero.getBoundingClientRect().bottom<64)};window.addEventListener('scroll',f,{passive:true});f();
+    }
+  })();
   var nav=document.querySelector('.v-mobile nav[aria-label="Menu"]');var tg=document.querySelector('.v-mobile [data-on="toggleNav"]');
   if(nav&&tg){var icons=tg.querySelectorAll('svg');
     function show(o){nav.style.display=o?'flex':'none';if(icons[0])icons[0].style.display=o?'none':'';if(icons[1])icons[1].style.display=o?'':'none';tg.setAttribute('aria-expanded',o);tg.setAttribute('aria-label',o?'Luk menu':'Åbn menu')}
