@@ -21,7 +21,9 @@ body{margin:0;background:#F0F0F1}
 .top-bar a{color:#F0C9A6}
 @media (max-width: 899px){
   .wp-root > nav{display:none !important}
-  .wp-root [style*="grid-template-columns"]{grid-template-columns:1fr !important}
+  .wp-root [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr) !important}
+  .wp-root input[type="date"]{width:132px !important}
+  .wp-root input[type="time"]{width:104px !important}
   .wp-root > div{padding:18px 14px 32px !important}
   #ml-menu-text{height:360px !important}
 }
@@ -225,11 +227,142 @@ Kaffe og dagens kage 50,-</textarea>
 </div>
 
 <div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px">
-<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 20px; align-items: end">
-<h2 style="grid-column: 1 / -1; margin: 0; font-size: 16px; font-weight: 600">3 · Åbningstider, sæson og lukkedage</h2>
-<label style="display: flex; flex-direction: column; gap: 4px">Åbningstider<input type="text" value="Fredag–søndag 11.00–21.00 · Mandag–torsdag lukket" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
-<label style="display: flex; flex-direction: column; gap: 4px">Sæson<input type="text" value="[Måned] – [måned]" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
-<label style="display: flex; flex-direction: column; gap: 4px">Særlige lukkedage <span style="color: #50575E; font-size: 13px">(tomt felt = vises ikke)</span><input type="text" value="" placeholder="Fx 24.–26. december" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
+<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">3 · Åbningstider, sæson og lukkedage</h2>
+<span style="font-size: 13px; color: #50575E">Det samme som på Google: faste tider pr. dag – og undtagelser, når der sker noget særligt.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap"><h3 style="margin: 0; font-size: 14px; font-weight: 600">A · Faste åbningstider</h3><button type="button" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer">Kopiér fredag til alle åbne dage</button></div>
+<div style="border: 1px solid #DCDCDE; border-radius: 6px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 9px 14px; border-top: 1px solid #F0F0F1">
+<strong style="width: 82px; font-size: 14px">Mandag</strong>
+<span style="display: inline-flex; padding: 2px; border: 1px solid #C3C4C7; border-radius: 5px; background: #F6F7F7; font-size: 13px">
+
+<span style="padding: 4px 12px; color: #2271B1">Åben</span><span style="padding: 4px 12px; border-radius: 3px; background: #50575E; color: #FFFFFF; font-weight: 600">Lukket</span>
+</span>
+
+<span style="font-size: 13px; color: #50575E">Lukket hele dagen</span>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 9px 14px; border-top: 1px solid #F0F0F1">
+<strong style="width: 82px; font-size: 14px">Tirsdag</strong>
+<span style="display: inline-flex; padding: 2px; border: 1px solid #C3C4C7; border-radius: 5px; background: #F6F7F7; font-size: 13px">
+
+<span style="padding: 4px 12px; color: #2271B1">Åben</span><span style="padding: 4px 12px; border-radius: 3px; background: #50575E; color: #FFFFFF; font-weight: 600">Lukket</span>
+</span>
+
+<span style="font-size: 13px; color: #50575E">Lukket hele dagen</span>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 9px 14px; border-top: 1px solid #F0F0F1">
+<strong style="width: 82px; font-size: 14px">Onsdag</strong>
+<span style="display: inline-flex; padding: 2px; border: 1px solid #C3C4C7; border-radius: 5px; background: #F6F7F7; font-size: 13px">
+
+<span style="padding: 4px 12px; color: #2271B1">Åben</span><span style="padding: 4px 12px; border-radius: 3px; background: #50575E; color: #FFFFFF; font-weight: 600">Lukket</span>
+</span>
+
+<span style="font-size: 13px; color: #50575E">Lukket hele dagen</span>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 9px 14px; border-top: 1px solid #F0F0F1">
+<strong style="width: 82px; font-size: 14px">Torsdag</strong>
+<span style="display: inline-flex; padding: 2px; border: 1px solid #C3C4C7; border-radius: 5px; background: #F6F7F7; font-size: 13px">
+
+<span style="padding: 4px 12px; color: #2271B1">Åben</span><span style="padding: 4px 12px; border-radius: 3px; background: #50575E; color: #FFFFFF; font-weight: 600">Lukket</span>
+</span>
+
+<span style="font-size: 13px; color: #50575E">Lukket hele dagen</span>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 9px 14px; border-top: 1px solid #F0F0F1">
+<strong style="width: 82px; font-size: 14px">Fredag</strong>
+<span style="display: inline-flex; padding: 2px; border: 1px solid #C3C4C7; border-radius: 5px; background: #F6F7F7; font-size: 13px">
+<span style="padding: 4px 12px; border-radius: 3px; background: #2271B1; color: #FFFFFF; font-weight: 600">Åben</span><span style="padding: 4px 12px; color: #2271B1">Lukket</span>
+
+</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px"><input type="time" value="11:00" aria-label="Åbner" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 124px"><span aria-hidden="true">–</span><input type="time" value="21:00" aria-label="Lukker" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 124px"></span><button type="button" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer">+ tidsrum</button>
+
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 9px 14px; border-top: 1px solid #F0F0F1">
+<strong style="width: 82px; font-size: 14px">Lørdag</strong>
+<span style="display: inline-flex; padding: 2px; border: 1px solid #C3C4C7; border-radius: 5px; background: #F6F7F7; font-size: 13px">
+<span style="padding: 4px 12px; border-radius: 3px; background: #2271B1; color: #FFFFFF; font-weight: 600">Åben</span><span style="padding: 4px 12px; color: #2271B1">Lukket</span>
+
+</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px"><input type="time" value="11:00" aria-label="Åbner" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 124px"><span aria-hidden="true">–</span><input type="time" value="21:00" aria-label="Lukker" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 124px"></span><button type="button" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer">+ tidsrum</button>
+
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 9px 14px; border-top: 1px solid #F0F0F1">
+<strong style="width: 82px; font-size: 14px">Søndag</strong>
+<span style="display: inline-flex; padding: 2px; border: 1px solid #C3C4C7; border-radius: 5px; background: #F6F7F7; font-size: 13px">
+<span style="padding: 4px 12px; border-radius: 3px; background: #2271B1; color: #FFFFFF; font-weight: 600">Åben</span><span style="padding: 4px 12px; color: #2271B1">Lukket</span>
+
+</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px"><input type="time" value="11:00" aria-label="Åbner" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 124px"><span aria-hidden="true">–</span><input type="time" value="21:00" aria-label="Lukker" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 124px"></span><button type="button" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer">+ tidsrum</button>
+
+</div>
+
+</div>
+<span style="font-size: 13px; color: #50575E">"+ tidsrum" bruges, hvis køkkenet holder pause – fx 11.00–14.00 og 17.00–21.00. Hjemmesiden viser selv "Åbent nu" eller "Lukket nu" ud fra tiderne.</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 600">B · Sæson</h3>
+<span style="font-size: 13px; color: #50575E">En sæson er en periode, hvor I har andre åbningstider end de faste – fx åbent alle dage i sommerferien eller vinterlukket. Uden for sæsonerne gælder de faste tider.</span>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; padding: 12px 14px; border: 1px solid #DCDCDE; border-radius: 6px; background: #FBFBFC">
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Navn<input type="text" value="Sommersæson" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 170px"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Fra<input type="date" value="2026-06-26" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Til<input type="date" value="2026-08-09" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"></label>
+<label style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Det står der på hjemmesiden<input type="text" value="Åbent alle dage 11.00–21.00 i sommerferien" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 100%"></label>
+<button type="button" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer">Ret tider pr. dag</button>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 14px; padding: 12px 14px; border: 1px solid #DCDCDE; border-radius: 6px; background: #FBFBFC">
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Navn<input type="text" value="Vinterpause" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 170px"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Fra<input type="date" value="2027-01-04" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"></label>
+<label style="display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Til<input type="date" value="2027-02-28" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"></label>
+<label style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px; font-size: 13px; font-weight: 600">Det står der på hjemmesiden<input type="text" value="Restauranten holder lukket – selskaber og mad ud af huset efter aftale" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 100%"></label>
+<button type="button" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer">Ret tider pr. dag</button>
+</div>
+
+<button type="button" style="min-height: 34px; padding: 0 12px; border: 1px solid #2271B1; background: #F6F7F7; color: #2271B1; border-radius: 4px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; align-self: flex-start">+ Tilføj sæson</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 14px; font-weight: 600">C · Særlige lukkedage og afvigende dage</h3>
+<span style="font-size: 13px; color: #50575E">Helligdage, ferie eller lukket pga. selskab. Datoer, der er passeret, forsvinder selv.</span>
+<div style="border: 1px solid #DCDCDE; border-radius: 6px">
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 10px 14px; border-top: 1px solid #F0F0F1">
+<span style="display: inline-flex; align-items: center; gap: 8px"><input type="date" value="2026-12-24" aria-label="Fra dato" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"><span aria-hidden="true">–</span><input type="date" value="2026-12-26" aria-label="Til dato (valgfri)" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"></span>
+<select aria-label="Status" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 170px"><option selected>Lukket</option><option>Andre åbningstider</option></select>
+<input type="text" value="Lukket i julen" aria-label="Bemærkning" placeholder="Bemærkning (vises på hjemmesiden)" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; flex: 1; min-width: 200px">
+<button type="button" aria-label="Fjern" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; color: #B32D2E">Fjern</button>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 10px 14px; border-top: 1px solid #F0F0F1">
+<span style="display: inline-flex; align-items: center; gap: 8px"><input type="date" value="2026-12-31" aria-label="Fra dato" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"><span aria-hidden="true">–</span><input type="date" value="" aria-label="Til dato (valgfri)" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"></span>
+<select aria-label="Status" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 170px"><option>Lukket</option><option selected>Andre åbningstider</option></select>
+<input type="text" value="Kun afhentning af nytårsmenu kl. 12–15" aria-label="Bemærkning" placeholder="Bemærkning (vises på hjemmesiden)" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; flex: 1; min-width: 200px">
+<button type="button" aria-label="Fjern" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; color: #B32D2E">Fjern</button>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; padding: 10px 14px; border-top: 1px solid #F0F0F1">
+<span style="display: inline-flex; align-items: center; gap: 8px"><input type="date" value="2027-01-01" aria-label="Fra dato" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"><span aria-hidden="true">–</span><input type="date" value="" aria-label="Til dato (valgfri)" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 150px"></span>
+<select aria-label="Status" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; width: 170px"><option selected>Lukket</option><option>Andre åbningstider</option></select>
+<input type="text" value="Lukket nytårsdag" aria-label="Bemærkning" placeholder="Bemærkning (vises på hjemmesiden)" style="min-height: 36px; padding: 4px 8px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; box-sizing: border-box; flex: 1; min-width: 200px">
+<button type="button" aria-label="Fjern" style="border: none; background: none; padding: 0; color: #2271B1; font: inherit; font-size: 13px; text-decoration: underline; cursor: pointer; color: #B32D2E">Fjern</button>
+</div>
+
+</div>
+<button type="button" style="min-height: 34px; padding: 0 12px; border: 1px solid #2271B1; background: #F6F7F7; color: #2271B1; border-radius: 4px; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; align-self: flex-start">+ Tilføj lukkedag</button>
+</div>
 </div>
 </div>
 
@@ -457,6 +590,16 @@ emptyMsg: isDrinks ? 'Indsæt drikkekortet i feltet til venstre.' : 'Indsæt men
 summary: cats.length ? `Fundet: ${cats.length} ${cats.length === 1 ? 'kategori' : 'kategorier'} og ${nDish} ${isDrinks ? (nDish === 1 ? 'drikkevare' : 'drikkevarer') : (nDish === 1 ? 'ret' : 'retter')}.` : '',
 onText: (e) => this.setState({ texts: { ...texts, [key]: e.target.value } }),
 reset: () => this.setState({ texts: { ...texts, [key]: SAMPLE[key] } }),
+wpDays: [['Mandag', false], ['Tirsdag', false], ['Onsdag', false], ['Torsdag', false], ['Fredag', true], ['Lørdag', true], ['Søndag', true]].map(([day, o]) => ({ day, open: o, closed: !o, from: '11:00', to: '21:00' })),
+wpSeasons: [
+{ name: 'Sommersæson', from: '2026-06-26', to: '2026-08-09', text: 'Åbent alle dage 11.00–21.00 i sommerferien' },
+{ name: 'Vinterpause', from: '2027-01-04', to: '2027-02-28', text: 'Restauranten holder lukket – selskaber og mad ud af huset efter aftale' }
+],
+wpClosed: [
+{ from: '2026-12-24', to: '2026-12-26', isClosed: true, isOther: false, note: 'Lukket i julen' },
+{ from: '2026-12-31', to: '', isClosed: false, isOther: true, note: 'Kun afhentning af nytårsmenu kl. 12–15' },
+{ from: '2027-01-01', to: '', isClosed: true, isOther: false, note: 'Lukket nytårsdag' }
+],
 wpEvents: [
 { label: 'Julefrokost', title: 'Julefrokost hos Mormor – eller hjemme hos jer', where: [{ k: 'I restauranten', on: true, off: false }, { k: 'Mad ud af huset', on: true, off: false }, { k: 'Takeaway', on: false, off: true }], when: 'Fredage og lørdage · [dato] – [dato]', text: 'Det gammeldags julebord, lavet fra bunden. Hold julefrokosten i stuen ved vandet – eller få maden bragt ud.', note: 'Fra [antal] personer · [pris] kr. pr. kuvert', pdf: 'julefrokost.pdf', until: '[20.12.2026]' },
 { label: 'Nytårsmenu', title: 'Nytårsmenu til at tage med hjem', where: [{ k: 'I restauranten', on: false, off: true }, { k: 'Mad ud af huset', on: false, off: true }, { k: 'Takeaway', on: true, off: false }], when: 'Afhentes 31. december kl. [12–15]', text: 'Festmenuen er lavet på forhånd. Retterne følger med en enkel vejledning til at varme og anrette dem derhjemme.', note: 'Bestil senest [dato] · Tilberedningsvejledning følger med', pdf: 'nytaarsmenu.pdf', until: '31.12.2026' }
