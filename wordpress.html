@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Sådan opdaterer I hjemmesiden – Mormors Landkøkken</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&amp;display=swap" rel="stylesheet">
+
+
+<style>
+
+body{margin:0}
+a{color:#2271B1}a:hover{color:#135E96}
+textarea:focus,input:focus{outline:2px solid #2271B1;outline-offset:1px}
+
+body{margin:0;background:#F0F0F1}
+.top-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;padding:10px 20px;background:#1C2B28;color:#F4EFE8;font:600 13px/1.4 'Nunito Sans',sans-serif}
+.top-bar a{color:#F0C9A6}
+@media (max-width: 899px){
+  .wp-root > nav{display:none !important}
+  .wp-root [style*="grid-template-columns"]{grid-template-columns:1fr !important}
+  .wp-root > div{padding:18px 14px 32px !important}
+  #ml-menu-text{height:360px !important}
+}
+</style>
+</head>
+<body>
+<div class="top-bar"><span>Designforslag fra C Studio · Sådan ser det ud, når I opdaterer hjemmesiden i WordPress</span><a href="./">← Tilbage til hjemmesiden</a></div>
+
+<div class="wp-root" style="min-height: 100vh; display: flex; background: #F0F0F1; color: #1D2327; font-family: -apple-system, 'Segoe UI', Roboto, sans-serif; font-size: 14px; line-height: 1.5">
+<nav aria-label="WordPress-menu" style="width: 190px; background: #1D2327; color: #F0F0F1; display: flex; flex-direction: column; padding-top: 12px; flex-shrink: 0">
+<span style="padding: 10px 16px; color: #A7AAAD">Kontrolpanel</span>
+<span style="padding: 10px 16px; background: #2271B1; color: #FFFFFF; font-weight: 600">Forsidens indhold</span>
+<span style="padding: 10px 16px; color: #A7AAAD">Medier</span>
+<span style="padding: 10px 16px; color: #A7AAAD">Profil</span>
+</nav>
+
+<div style="flex: 1; padding: 28px 32px 40px; display: flex; flex-direction: column; gap: 20px; min-width: 0">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 16px">
+<div>
+<h1 style="margin: 0; font-size: 23px; font-weight: 400">Forsidens indhold</h1>
+<p style="margin: 4px 0 0; color: #50575E">Alt, I skal opdatere, ligger på denne ene side. Resten af hjemmesiden er låst, så intet kan gå i stykker.</p>
+</div>
+<button type="button" style="min-height: 40px; padding: 0 22px; border: none; border-radius: 4px; background: #2271B1; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Gem ændringer</button>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">1 · Menukort på hjemmesiden</h2>
+<span style="font-size: 13px; color: #50575E">Tager ca. 2 minutter: kopiér – indsæt – gem</span>
+</div>
+
+<div role="tablist" aria-label="Sprog" style="display: flex; gap: 0; border-bottom: 1px solid #C3C4C7">
+
+<button type="button" role="tab" aria-selected="true" data-on="pick" style="min-height: 40px; padding: 0 18px; margin-bottom: -1px; border: 1px solid #C3C4C7; border-bottom-color: #FFFFFF; background: #FFFFFF; font: inherit; font-weight: 600; color: #1D2327; cursor: pointer">Dansk</button>
+
+
+
+<button type="button" role="tab" aria-selected="false" data-on="pick" style="min-height: 40px; padding: 0 18px; border: 1px solid transparent; background: transparent; font: inherit; color: #2271B1; cursor: pointer">Deutsch</button>
+
+
+<button type="button" role="tab" aria-selected="false" data-on="pick" style="min-height: 40px; padding: 0 18px; border: 1px solid transparent; background: transparent; font: inherit; color: #2271B1; cursor: pointer">English</button>
+
+</div>
+
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<label for="ml-menu-text" style="font-weight: 600">Indsæt menukortet her</label>
+<textarea id="ml-menu-text" data-on="onText" spellcheck="false" style="width: 100%; box-sizing: border-box; height: 560px; padding: 14px; border: 1px solid #8C8F94; border-radius: 4px; font: 14px/1.6 ui-monospace, Menlo, Consolas, monospace; color: #1D2327; resize: vertical">LETTE RETTER
+Rejecocktail .......... 109,-
+Hjemmelavet dressing og brød
+Salat med laksemousse og rejer   139 kr.
+Hjemmelavet urtedressing og brød
+Fish 'n' chips - 129
+Hjemmelavet tatarsauce
+
+HOVEDRETTER
+Mormors mørbradgryde
+Ovnbagt kartoffelmos og rødbeder
+Skinkeschnitzel 159,-
+Smørsauce, brasede kartofler og ærter
+Hakkebøf 179,-
+Bløde løg, agurkesalat, spejlæg, kartofler og brun sovs
+Klassisk stjerneskud 209,-
+
+DESSERTER &amp; KAGE
+Gammeldags æblekage 75,-
+Makroner, flødeskum og hasselnødder
+Bagt æble 89,-
+Marcipan og vaniljeis
+Kaffe og dagens kage 50,-</textarea>
+<div style="padding: 14px 16px; background: #F6F7F7; border-left: 4px solid #2271B1; display: flex; flex-direction: column; gap: 6px; font-size: 13px">
+<strong style="font-size: 14px">Sådan skriver I – kun tre regler</strong>
+<span><strong>Kategori:</strong> en linje for sig selv med en tom linje over, fx <code>HOVEDRETTER</code></span>
+<span><strong>Ret:</strong> navnet og prisen sidst på linjen, fx <code>Hakkebøf 179,-</code> (kr., ,- og prikker er ligegyldige)</span>
+<span><strong>Beskrivelse:</strong> linjen lige under retten</span>
+<span style="color: #50575E">Man kan kopiere direkte fra Word eller PDF – siden rydder selv op i mellemrum og prikker.</span>
+</div>
+<button type="button" data-on="reset" style="align-self: flex-start; min-height: 32px; padding: 0 12px; border: 1px solid #2271B1; background: #F6F7F7; color: #2271B1; border-radius: 4px; font: inherit; cursor: pointer">Gendan eksempel</button>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; justify-content: space-between"><span style="font-weight: 600">Sådan ser det ud på hjemmesiden</span><span style="display: inline-flex; align-items: center; gap: 6px; font-size: 12px; color: #00A32A; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #00A32A"></span>Opdateres mens I skriver</span></div>
+<div style="background: #EEF3F3; border-radius: 14px; padding: 18px">
+<div style="background: #FFFFFF; border-radius: 12px; padding: 28px 28px 22px; font-family: 'Nunito Sans', system-ui, sans-serif; color: #1C2B28; outline: 1px solid #DCE6E7; outline-offset: -8px; display: flex; flex-direction: column; gap: 26px; max-height: 640px; overflow: auto">
+<div id="wp-preview" style="display: contents">
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 21px; color: #A85F33; white-space: nowrap">Lette retter</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Rejecocktail</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">109,-</span></div>
+<span style="font-size: 13px; color: #5B6663">Hjemmelavet dressing og brød</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Salat med laksemousse og rejer</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">139,-</span></div>
+<span style="font-size: 13px; color: #5B6663">Hjemmelavet urtedressing og brød</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Fish 'n' chips</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">129,-</span></div>
+<span style="font-size: 13px; color: #5B6663">Hjemmelavet tatarsauce</span>
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 21px; color: #A85F33; white-space: nowrap">Hovedretter</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Mormors mørbradgryde</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap"></span></div>
+<span style="font-size: 13px; color: #5B6663">Ovnbagt kartoffelmos og rødbeder</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Skinkeschnitzel</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">159,-</span></div>
+<span style="font-size: 13px; color: #5B6663">Smørsauce, brasede kartofler og ærter</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Hakkebøf</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">179,-</span></div>
+<span style="font-size: 13px; color: #5B6663">Bløde løg, agurkesalat, spejlæg, kartofler og brun sovs</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Klassisk stjerneskud</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">209,-</span></div>
+
+</div>
+
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; gap: 12px"><h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 21px; color: #A85F33; white-space: nowrap">Desserter &amp; kage</h3><span aria-hidden="true" style="flex: 1; height: 1px; background: #E6D3C6"></span></div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Gammeldags æblekage</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">75,-</span></div>
+<span style="font-size: 13px; color: #5B6663">Makroner, flødeskum og hasselnødder</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Bagt æble</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">89,-</span></div>
+<span style="font-size: 13px; color: #5B6663">Marcipan og vaniljeis</span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="display: flex; align-items: baseline; gap: 8px"><span style="font-size: 15px; font-weight: 700">Kaffe og dagens kage</span><span aria-hidden="true" style="flex: 1; min-width: 16px; border-bottom: 2px dotted #C5D2D3; transform: translateY(-4px)"></span><span style="font-family: 'Young Serif', Georgia, serif; font-size: 15px; white-space: nowrap">50,-</span></div>
+
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+<span id="wp-summary" style="font-size: 13px; color: #50575E">Fundet: 3 kategorier og 10 retter.</span>
+</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">2 · Menukort som PDF</h2>
+<span style="font-size: 13px; color: #50575E">Gæsterne får knappen <strong>Hent menukortet som PDF</strong> – den åbner i et nyt vindue</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px">
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 2px dashed #C3C4C7; border-radius: 6px; background: #FBFBFC">
+<span style="font-weight: 600">Dansk menukort</span>
+<span style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex-shrink: 0; width: 32px; height: 40px; border-radius: 3px; background: #D63638; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; box-sizing: border-box">PDF</span><span style="display: flex; flex-direction: column; min-width: 0"><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">menukort-mormors-landkoekken.pdf</span><span style="font-size: 12px; color: #50575E">Uploadet [dato] · 240 KB</span></span></span>
+<span style="display: flex; gap: 14px; font-size: 13px"><a href="#">Udskift fil</a><a href="#">Se fil</a></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 2px dashed #C3C4C7; border-radius: 6px; background: #FBFBFC">
+<span style="font-weight: 600">Speisekarte (tysk)</span>
+<span style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex-shrink: 0; width: 32px; height: 40px; border-radius: 3px; background: #D63638; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; box-sizing: border-box">PDF</span><span style="display: flex; flex-direction: column; min-width: 0"><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">speisekarte-mormors-landkoekken.pdf</span><span style="font-size: 12px; color: #50575E">Uploadet [dato] · 230 KB</span></span></span>
+<span style="display: flex; gap: 14px; font-size: 13px"><a href="#">Udskift fil</a><a href="#">Se fil</a></span>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px; padding: 16px; border: 2px dashed #C3C4C7; border-radius: 6px; background: #FBFBFC">
+<span style="font-weight: 600">Menu (engelsk)</span>
+<span style="display: flex; align-items: center; gap: 10px"><span aria-hidden="true" style="flex-shrink: 0; width: 32px; height: 40px; border-radius: 3px; background: #D63638; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; box-sizing: border-box">PDF</span><span style="display: flex; flex-direction: column; min-width: 0"><span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap">menu-mormors-landkoekken.pdf</span><span style="font-size: 12px; color: #50575E">Uploadet [dato] · 228 KB</span></span></span>
+<span style="display: flex; gap: 14px; font-size: 13px"><a href="#">Udskift fil</a><a href="#">Se fil</a></span>
+</div>
+
+</div>
+<span style="font-size: 13px; color: #50575E">Træk en ny fil hen på feltet, eller klik på "Udskift fil". Den gamle fil bliver erstattet automatisk.</span>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
+<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">3 · Åbningstider, sæson og lukkedage</h2>
+<label style="display: flex; flex-direction: column; gap: 4px">Åbningstider<input type="text" value="Fredag–søndag 11.00–21.00 · Mandag–torsdag lukket" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
+<label style="display: flex; flex-direction: column; gap: 4px">Sæson<input type="text" value="[Måned] – [måned]" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
+<label style="display: flex; flex-direction: column; gap: 4px">Særlige lukkedage <span style="color: #50575E; font-size: 13px">(tomt felt = vises ikke)</span><input type="text" value="" placeholder="Fx 24.–26. december" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
+</div>
+<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">4 · Kommende arrangementer</h2>
+<label style="display: flex; flex-direction: column; gap: 4px">Ét arrangement pr. linje – dato, titel og tid<textarea rows="4" style="padding: 10px; border: 1px solid #8C8F94; border-radius: 4px; font: 14px/1.6 ui-monospace, Menlo, Consolas, monospace; resize: vertical">12.12 Julefrokost med det store kolde bord · kl. 12.00
+31.12 Nytårsmenu · kl. 18.00</textarea></label>
+<span style="color: #50575E; font-size: 13px">Arrangementer forsvinder selv, når datoen er passeret. Står der intet, skjules sektionen.</span>
+</div>
+</div>
+
+<div style="display: flex; align-items: center; gap: 16px">
+<button type="button" style="min-height: 40px; padding: 0 22px; border: none; border-radius: 4px; background: #2271B1; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Gem ændringer</button>
+<span style="color: #50575E">Hjemmesiden og datoen "Opdateret" ændres automatisk, når I gemmer.</span>
+</div>
+</div>
+</div>
+
+<script>
+// Live preview: reuse the component's own parsing logic
+(function(){
+  class DCLogic{constructor(){this.props={};this.state={}}setState(o){Object.assign(this.state,o);draw()}}
+  class Comp extends DCLogic {
+renderVals() {
+const SAMPLE = {
+da: `LETTE RETTER
+Rejecocktail .......... 109,-
+Hjemmelavet dressing og brød
+Salat med laksemousse og rejer   139 kr.
+Hjemmelavet urtedressing og brød
+Fish 'n' chips - 129
+Hjemmelavet tatarsauce
+
+HOVEDRETTER
+Mormors mørbradgryde
+Ovnbagt kartoffelmos og rødbeder
+Skinkeschnitzel 159,-
+Smørsauce, brasede kartofler og ærter
+Hakkebøf 179,-
+Bløde løg, agurkesalat, spejlæg, kartofler og brun sovs
+Klassisk stjerneskud 209,-
+
+DESSERTER & KAGE
+Gammeldags æblekage 75,-
+Makroner, flødeskum og hasselnødder
+Bagt æble 89,-
+Marcipan og vaniljeis
+Kaffe og dagens kage 50,-`,
+de: `HAUPTGERICHTE
+Omas Schweinefilet-Topf
+Überbackenes Kartoffelpüree und Rote Bete
+Schinkenschnitzel 159 kr.
+Buttersoße, Bratkartoffeln und Erbsen
+Hacksteak 179 kr.
+
+DESSERTS
+Dänischer Apfelkuchen 75 kr.
+Makronen, Sahne und Haselnüsse`,
+en: `MAIN COURSES
+Grandma's pork tenderloin stew
+Oven-baked mash and pickled beetroot
+Ham schnitzel DKK 159
+Butter sauce, sautéed potatoes and peas
+Danish beef patty DKK 179
+
+DESSERTS
+Old-fashioned apple trifle DKK 75
+Macaroons, cream and hazelnuts`
+};
+const lang = (this.state && this.state.lang) || 'da';
+const texts = (this.state && this.state.texts) || SAMPLE;
+const text = texts[lang] ?? '';
+const fmt = (n) => lang === 'da' ? n + ',-' : lang === 'de' ? n + ' kr.' : 'DKK ' + n;
+const priceRe = /^(.*?)[\s.\-–—:·]*(?:DKK\s*)?(\d{2,4})(?:\s*(?:,-|,00|kr\.?|DKK))?\s*$/i;
+const cap = (s) => { const t = s.trim(); if (t === t.toUpperCase()) { const l = t.toLowerCase(); return l.charAt(0).toUpperCase() + l.slice(1); } return t; };
+const cats = []; let cur = null; let last = null; let prevBlank = true;
+text.split(/\r?\n/).forEach((raw) => {
+  const line = raw.replace(/\s+/g, ' ').trim();
+  if (!line) { prevBlank = true; return; }
+  const m = line.match(priceRe);
+  if (m && m[1].trim()) {
+    if (!cur) { cur = { title: '', items: [] }; cats.push(cur); }
+    last = { name: m[1].replace(/[.\-–—:·\s]+$/, '').trim(), price: fmt(m[2]), desc: '', hasDesc: false };
+    cur.items.push(last);
+  } else if (prevBlank || !cur) {
+    cur = { title: cap(line), items: [] }; cats.push(cur); last = null;
+  } else if (!last || last.hasDesc) {
+    last = { name: line, price: '', desc: '', hasDesc: false }; cur.items.push(last);
+  } else {
+    last.desc = line; last.hasDesc = true;
+  }
+  prevBlank = false;
+});
+const nDish = cats.reduce((a, c) => a + c.items.length, 0);
+const tabs = [['da', 'Dansk'], ['de', 'Deutsch'], ['en', 'English']].map(([k, label]) => ({ label, active: lang === k, inactive: lang !== k, pick: () => this.setState({ lang: k }) }));
+return {
+tabs, text, cats, empty: cats.length === 0,
+summary: cats.length ? `Fundet: ${cats.length} kategorier og ${nDish} retter.` : '',
+onText: (e) => this.setState({ texts: { ...texts, [lang]: e.target.value } }),
+reset: () => this.setState({ texts: { ...texts, [lang]: SAMPLE[lang] } }),
+pdfs: [
+{ lang: 'Dansk menukort', file: 'menukort-mormors-landkoekken.pdf', meta: 'Uploadet [dato] · 240 KB' },
+{ lang: 'Speisekarte (tysk)', file: 'speisekarte-mormors-landkoekken.pdf', meta: 'Uploadet [dato] · 230 KB' },
+{ lang: 'Menu (engelsk)', file: 'menu-mormors-landkoekken.pdf', meta: 'Uploadet [dato] · 228 KB' }
+]
+};
+}
+}
+
+  var c=new Comp();
+  var ta=document.getElementById('ml-menu-text'),prev=document.getElementById('wp-preview'),sum=document.getElementById('wp-summary');
+  function e(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+  function draw(){
+    var v=c.renderVals();
+    if(ta.value!==v.text) ta.value=v.text;
+    var h='';
+    v.cats.forEach(function(k){
+      h+='<div style="display:flex;flex-direction:column;gap:14px"><div style="display:flex;align-items:center;gap:12px"><h3 style="margin:0;font-family:\'Young Serif\',Georgia,serif;font-weight:400;font-size:21px;color:#A85F33;white-space:nowrap">'+e(k.title)+'</h3><span aria-hidden="true" style="flex:1;height:1px;background:#E6D3C6"></span></div>';
+      k.items.forEach(function(d){
+        h+='<div style="display:flex;flex-direction:column;gap:1px"><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:15px;font-weight:700">'+e(d.name)+'</span><span aria-hidden="true" style="flex:1;min-width:16px;border-bottom:2px dotted #C5D2D3;transform:translateY(-4px)"></span><span style="font-family:\'Young Serif\',Georgia,serif;font-size:15px;white-space:nowrap">'+e(d.price)+'</span></div>'+(d.hasDesc?'<span style="font-size:13px;color:#5B6663">'+e(d.desc)+'</span>':'')+'</div>';
+      });
+      h+='</div>';
+    });
+    if(!v.cats.length) h='<span style="color:#5B6663">Indsæt menukortet i feltet til venstre.</span>';
+    prev.innerHTML=h; sum.textContent=v.summary;
+    // tabs
+    document.querySelectorAll('[data-on="pick"]').forEach(function(b){
+      var map={'Dansk':'da','Deutsch':'de','English':'en'};var lang=map[b.textContent.trim()];var cur=(c.state.lang||'da');
+      var on=lang===cur;b.setAttribute('aria-selected',on);
+      b.style.borderColor=on?'#C3C4C7':'transparent';b.style.borderBottomColor=on?'#FFFFFF':'transparent';b.style.background=on?'#FFFFFF':'transparent';b.style.fontWeight=on?'600':'400';b.style.color=on?'#1D2327':'#2271B1';b.style.marginBottom=on?'-1px':'0';
+    });
+  }
+  // the static render shows only the active tab button; rebuild all three
+  var tabList=document.querySelector('[role="tablist"]');
+  tabList.innerHTML=['Dansk','Deutsch','English'].map(function(l){return '<button type="button" role="tab" data-on="pick" style="min-height:40px;padding:0 18px;border:1px solid transparent;background:transparent;font:inherit;cursor:pointer">'+l+'</button>'}).join('');
+  var map={'Dansk':'da','Deutsch':'de','English':'en'};
+  tabList.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){c.setState({lang:map[b.textContent]})})});
+  function defaults(){var x=new Comp();var o={};['da','de','en'].forEach(function(l){x.state={lang:l};o[l]=x.renderVals().text});return o}
+  var texts=defaults();
+  ta.addEventListener('input',function(){texts[c.state.lang||'da']=ta.value;c.setState({texts:Object.assign({},texts)})});
+  document.querySelector('[data-on="reset"]').addEventListener('click',function(){var d=defaults();var l=c.state.lang||'da';texts[l]=d[l];c.setState({texts:Object.assign({},texts)})});
+  draw();
+})();
+</script>
+</body>
+</html>
