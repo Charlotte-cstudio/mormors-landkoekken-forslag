@@ -49,8 +49,22 @@ body{margin:0;background:#F0F0F1}
 
 <div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 16px">
 <div style="display: flex; align-items: center; justify-content: space-between; gap: 16px">
-<h2 style="margin: 0; font-size: 16px; font-weight: 600">1 · Menukort på hjemmesiden</h2>
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">1 · Menukort og drikkekort på hjemmesiden</h2>
 <span style="font-size: 13px; color: #50575E">Tager ca. 2 minutter: kopiér – indsæt – gem</span>
+</div>
+
+<div role="group" aria-label="Hvilket kort vil I opdatere?" style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+<span style="font-weight: 600">Hvilket kort?</span>
+<div class="wp-kinds" style="display: inline-flex; padding: 3px; border: 1px solid #C3C4C7; border-radius: 6px; background: #F6F7F7; gap: 3px">
+
+<button type="button" aria-pressed="true" data-on="pickKind" style="min-height: 34px; padding: 0 18px; border: none; border-radius: 4px; background: #2271B1; color: #FFFFFF; font: inherit; font-weight: 600; cursor: pointer">Mad</button>
+
+
+
+<button type="button" aria-pressed="false" data-on="pickKind" style="min-height: 34px; padding: 0 18px; border: none; border-radius: 4px; background: transparent; color: #2271B1; font: inherit; cursor: pointer">Drikkevarer</button>
+
+</div>
+<span style="font-size: 13px; color: #50575E">Begge kort vises samlet under Menukort på hjemmesiden.</span>
 </div>
 
 <div role="tablist" aria-label="Sprog" style="display: flex; gap: 0; border-bottom: 1px solid #C3C4C7">
@@ -93,10 +107,11 @@ Bagt æble 89,-
 Marcipan og vaniljeis
 Kaffe og dagens kage 50,-</textarea>
 <div style="padding: 14px 16px; background: #F6F7F7; border-left: 4px solid #2271B1; display: flex; flex-direction: column; gap: 6px; font-size: 13px">
-<strong style="font-size: 14px">Sådan skriver I – kun tre regler</strong>
+<strong style="font-size: 14px">Sådan skriver I – få, enkle regler</strong>
 <span><strong>Kategori:</strong> en linje for sig selv med en tom linje over, fx <code>HOVEDRETTER</code></span>
 <span><strong>Ret:</strong> navnet og prisen sidst på linjen, fx <code>Hakkebøf 179,-</code> (kr., ,- og prikker er ligegyldige)</span>
 <span><strong>Beskrivelse:</strong> linjen lige under retten</span>
+<span><strong>Vin med to priser:</strong> skriv glas og flaske med skråstreg, fx <code>Husets rødvin 55 / 245</code></span>
 <span style="color: #50575E">Man kan kopiere direkte fra Word eller PDF – siden rydder selv op i mellemrum og prikker.</span>
 </div>
 <button type="button" data-on="reset" style="align-self: flex-start; min-height: 32px; padding: 0 12px; border: 1px solid #2271B1; background: #F6F7F7; color: #2271B1; border-radius: 4px; font: inherit; cursor: pointer">Gendan eksempel</button>
@@ -209,18 +224,78 @@ Kaffe og dagens kage 50,-</textarea>
 <span style="font-size: 13px; color: #50575E">Træk en ny fil hen på feltet, eller klik på "Udskift fil". Den gamle fil bliver erstattet automatisk.</span>
 </div>
 
-<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px">
-<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 16px; font-weight: 600">3 · Åbningstider, sæson og lukkedage</h2>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px">
+<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px 20px; align-items: end">
+<h2 style="grid-column: 1 / -1; margin: 0; font-size: 16px; font-weight: 600">3 · Åbningstider, sæson og lukkedage</h2>
 <label style="display: flex; flex-direction: column; gap: 4px">Åbningstider<input type="text" value="Fredag–søndag 11.00–21.00 · Mandag–torsdag lukket" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
 <label style="display: flex; flex-direction: column; gap: 4px">Sæson<input type="text" value="[Måned] – [måned]" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
 <label style="display: flex; flex-direction: column; gap: 4px">Særlige lukkedage <span style="color: #50575E; font-size: 13px">(tomt felt = vises ikke)</span><input type="text" value="" placeholder="Fx 24.–26. december" style="height: 36px; padding: 0 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit"></label>
 </div>
-<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 12px">
-<h2 style="margin: 0; font-size: 16px; font-weight: 600">4 · Kommende arrangementer</h2>
-<label style="display: flex; flex-direction: column; gap: 4px">Ét arrangement pr. linje – dato, titel og tid<textarea rows="4" style="padding: 10px; border: 1px solid #8C8F94; border-radius: 4px; font: 14px/1.6 ui-monospace, Menlo, Consolas, monospace; resize: vertical">12.12 Julefrokost med det store kolde bord · kl. 12.00
-31.12 Nytårsmenu · kl. 18.00</textarea></label>
-<span style="color: #50575E; font-size: 13px">Arrangementer forsvinder selv, når datoen er passeret. Står der intet, skjules sektionen.</span>
+</div>
+
+<div style="background: #FFFFFF; border: 1px solid #C3C4C7; padding: 22px 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap">
+<h2 style="margin: 0; font-size: 16px; font-weight: 600">4 · Aktuelt nu – arrangementer og sæsonmenuer</h2>
+<span style="font-size: 13px; color: #50575E">Fx julefrokost og nytårsmenu. Udfyld felterne og upload menuen – kortet kommer selv på forsiden.</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; align-items: start">
+
+<div style="border: 1px solid #DCDCDE; border-radius: 6px; overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; background: #F6F7F7; border-bottom: 1px solid #DCDCDE">
+<strong style="font-size: 15px">Julefrokost</strong>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #1D2327"><span aria-hidden="true" style="position: relative; width: 36px; height: 20px; border-radius: 999px; background: #2271B1"><span style="position: absolute; top: 3px; right: 3px; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF"></span></span>Vises på hjemmesiden</span>
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 14px">
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Overskrift<input type="text" value="Julefrokost hos Mormor – eller hjemme hos jer" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF"></label>
+<div style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Hvor?
+<div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-weight: 400; font-size: 14px">
+<label style="display: inline-flex; align-items: center; gap: 6px"><input type="checkbox" checked>I restauranten</label><label style="display: inline-flex; align-items: center; gap: 6px"><input type="checkbox" checked>Mad ud af huset</label><label style="display: inline-flex; align-items: center; gap: 6px"><input type="checkbox">Takeaway</label>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Hvornår<input type="text" value="Fredage og lørdage · [dato] – [dato]" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Kort tekst<textarea rows="3" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; resize: vertical; line-height: 1.5">Det gammeldags julebord, lavet fra bunden. Hold julefrokosten i stuen ved vandet – eller få maden bragt ud.</textarea></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Praktisk info (pris, bestil senest …)<input type="text" value="Fra [antal] personer · [pris] kr. pr. kuvert" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF"></label>
+<div style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Menu som PDF
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px dashed #8C8F94; border-radius: 4px; font-weight: 400">
+<span aria-hidden="true" style="flex-shrink: 0; width: 34px; height: 40px; border-radius: 3px; background: #D63638; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; box-sizing: border-box">PDF</span>
+<span style="display: flex; flex-direction: column; min-width: 0; flex: 1"><a href="julefrokost.pdf" target="_blank" rel="noopener" style="color: #2271B1; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">julefrokost.pdf</a><span style="font-size: 12px; color: #50575E">Uploadet [dato] · åbner i nyt vindue</span></span>
+<button type="button" style="flex-shrink: 0; min-height: 32px; padding: 0 12px; border: 1px solid #2271B1; background: #F6F7F7; color: #2271B1; border-radius: 4px; font: inherit; font-size: 13px; cursor: pointer">Udskift fil</button>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Skjules automatisk efter<input type="text" value="[20.12.2026]" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; max-width: 200px"></label>
+</div>
+</div>
+
+<div style="border: 1px solid #DCDCDE; border-radius: 6px; overflow: hidden">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 16px; background: #F6F7F7; border-bottom: 1px solid #DCDCDE">
+<strong style="font-size: 15px">Nytårsmenu</strong>
+<span style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #1D2327"><span aria-hidden="true" style="position: relative; width: 36px; height: 20px; border-radius: 999px; background: #2271B1"><span style="position: absolute; top: 3px; right: 3px; width: 14px; height: 14px; border-radius: 50%; background: #FFFFFF"></span></span>Vises på hjemmesiden</span>
+</div>
+<div style="padding: 16px; display: flex; flex-direction: column; gap: 14px">
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Overskrift<input type="text" value="Nytårsmenu til at tage med hjem" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF"></label>
+<div style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Hvor?
+<div style="display: flex; flex-wrap: wrap; gap: 6px 18px; font-weight: 400; font-size: 14px">
+<label style="display: inline-flex; align-items: center; gap: 6px"><input type="checkbox">I restauranten</label><label style="display: inline-flex; align-items: center; gap: 6px"><input type="checkbox">Mad ud af huset</label><label style="display: inline-flex; align-items: center; gap: 6px"><input type="checkbox" checked>Takeaway</label>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Hvornår<input type="text" value="Afhentes 31. december kl. [12–15]" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF"></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Kort tekst<textarea rows="3" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; resize: vertical; line-height: 1.5">Festmenuen er lavet på forhånd. Retterne følger med en enkel vejledning til at varme og anrette dem derhjemme.</textarea></label>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Praktisk info (pris, bestil senest …)<input type="text" value="Bestil senest [dato] · Tilberedningsvejledning følger med" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF"></label>
+<div style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Menu som PDF
+<div style="display: flex; align-items: center; gap: 12px; padding: 10px 12px; border: 1px dashed #8C8F94; border-radius: 4px; font-weight: 400">
+<span aria-hidden="true" style="flex-shrink: 0; width: 34px; height: 40px; border-radius: 3px; background: #D63638; color: #FFFFFF; font-size: 10px; font-weight: 700; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 5px; box-sizing: border-box">PDF</span>
+<span style="display: flex; flex-direction: column; min-width: 0; flex: 1"><a href="nytaarsmenu.pdf" target="_blank" rel="noopener" style="color: #2271B1; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">nytaarsmenu.pdf</a><span style="font-size: 12px; color: #50575E">Uploadet [dato] · åbner i nyt vindue</span></span>
+<button type="button" style="flex-shrink: 0; min-height: 32px; padding: 0 12px; border: 1px solid #2271B1; background: #F6F7F7; color: #2271B1; border-radius: 4px; font: inherit; font-size: 13px; cursor: pointer">Udskift fil</button>
+</div>
+</div>
+<label style="display: flex; flex-direction: column; gap: 5px; font-weight: 600; font-size: 13px">Skjules automatisk efter<input type="text" value="31.12.2026" style="width: 100%; box-sizing: border-box; min-height: 36px; padding: 6px 10px; border: 1px solid #8C8F94; border-radius: 4px; font: inherit; font-weight: 400; color: #1D2327; background: #FFFFFF; max-width: 200px"></label>
+</div>
+</div>
+
+</div>
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px">
+<button type="button" style="min-height: 36px; padding: 0 14px; border: 1px solid #2271B1; background: #F6F7F7; color: #2271B1; border-radius: 4px; font: inherit; font-weight: 600; cursor: pointer">+ Tilføj arrangement</button>
+<span style="font-size: 13px; color: #50575E">Ligger menuen kun på Facebook som billede? Upload billedet i stedet for en PDF – det virker på samme måde.</span>
 </div>
 </div>
 
@@ -238,7 +313,7 @@ Kaffe og dagens kage 50,-</textarea>
   class Comp extends DCLogic {
 renderVals() {
 const SAMPLE = {
-da: `LETTE RETTER
+'food:da': `LETTE RETTER
 Rejecocktail .......... 109,-
 Hjemmelavet dressing og brød
 Salat med laksemousse og rejer   139 kr.
@@ -261,7 +336,7 @@ Makroner, flødeskum og hasselnødder
 Bagt æble 89,-
 Marcipan og vaniljeis
 Kaffe og dagens kage 50,-`,
-de: `HAUPTGERICHTE
+'food:de': `HAUPTGERICHTE
 Omas Schweinefilet-Topf
 Überbackenes Kartoffelpüree und Rote Bete
 Schinkenschnitzel 159 kr.
@@ -271,7 +346,7 @@ Hacksteak 179 kr.
 DESSERTS
 Dänischer Apfelkuchen 75 kr.
 Makronen, Sahne und Haselnüsse`,
-en: `MAIN COURSES
+'food:en': `MAIN COURSES
 Grandma's pork tenderloin stew
 Oven-baked mash and pickled beetroot
 Ham schnitzel DKK 159
@@ -280,13 +355,78 @@ Danish beef patty DKK 179
 
 DESSERTS
 Old-fashioned apple trifle DKK 75
-Macaroons, cream and hazelnuts`
+Macaroons, cream and hazelnuts`,
+'drinks:da': `ØL
+Fadøl 0,4 l ........ 55,-
+Odense Pilsner eller Classic
+Fadøl 0,3 l ........ 40,-
+Odense Pilsner eller Classic
+Special porter 65 kr.
+Med hyldebær fra Fantastbryg
+Gambrinus 40,-
+Hancock 40,-
+Hancock Black 35,-
+Høker Bajer 35,-
+Royal alkoholfri 0,33 l 35,-
+
+VIN
+Husets rødvin 55 / 245
+Bodegas Pinoso »Vermandor« Tinto
+Husets hvidvin 55 / 245
+Bodegas Pinoso »Vermandor« Blanco
+Husets rosé 55 / 245
+Bodegas Pinoso »Vermandor« Rosé
+Perscarpa Primitivo 315,-
+Italien · flaske
+Perscarpa Bianca 315,-
+Italien · flaske
+Dignitat Cava, semi seco 295,-
+Mousserende · Spanien · flaske
+
+KOLDE DRIKKE
+Mormors saft 40,-
+Rabarber, solbær, hyldeblomst, hindbær/lime eller æblemost
+Sodavand 30,-
+Coca-Cola, Pepsi Max, Hancock
+Kande vand 30,-
+
+VARME DRIKKE
+Filterkaffe 25,-
+Te 25,-
+Specialkaffe 45,-
+Irish coffee 65,-`,
+'drinks:de': `BIER
+Fassbier 0,4 l 55 kr.
+Odense Pilsner oder Classic
+Fassbier 0,3 l 40 kr.
+
+WEIN
+Rotwein des Hauses 55 / 245
+Bodegas Pinoso »Vermandor« Tinto
+
+HEISSE GETRÄNKE
+Filterkaffee 25 kr.
+Irish Coffee 65 kr.`,
+'drinks:en': `BEER
+Draught beer 0.4 l DKK 55
+Odense Pilsner or Classic
+Draught beer 0.3 l DKK 40
+
+WINE
+House red 55 / 245
+Bodegas Pinoso »Vermandor« Tinto
+
+HOT DRINKS
+Filter coffee DKK 25
+Irish coffee DKK 65`
 };
 const lang = (this.state && this.state.lang) || 'da';
+const kind = (this.state && this.state.kind) || 'food';
+const key = kind + ':' + lang;
 const texts = (this.state && this.state.texts) || SAMPLE;
-const text = texts[lang] ?? '';
-const fmt = (n) => lang === 'da' ? n + ',-' : lang === 'de' ? n + ' kr.' : 'DKK ' + n;
-const priceRe = /^(.*?)[\s.\-–—:·]*(?:DKK\s*)?(\d{2,4})(?:\s*(?:,-|,00|kr\.?|DKK))?\s*$/i;
+const text = texts[key] ?? '';
+const fmt = (n, n2) => n2 ? (lang === 'da' ? n + ',- / ' + n2 + ',-' : lang === 'de' ? n + ' / ' + n2 + ' kr.' : 'DKK ' + n + ' / ' + n2) : (lang === 'da' ? n + ',-' : lang === 'de' ? n + ' kr.' : 'DKK ' + n);
+const priceRe = /^(.*?)[\s.\-–—:·]*(?:DKK\s*)?(\d{2,4})(?:\s*(?:,-|,00|kr\.?|DKK))?(?:\s*\/\s*(?:DKK\s*)?(\d{2,4})(?:\s*(?:,-|,00|kr\.?|DKK))?)?\s*$/i;
 const cap = (s) => { const t = s.trim(); if (t === t.toUpperCase()) { const l = t.toLowerCase(); return l.charAt(0).toUpperCase() + l.slice(1); } return t; };
 const cats = []; let cur = null; let last = null; let prevBlank = true;
 text.split(/\r?\n/).forEach((raw) => {
@@ -295,7 +435,7 @@ text.split(/\r?\n/).forEach((raw) => {
   const m = line.match(priceRe);
   if (m && m[1].trim()) {
     if (!cur) { cur = { title: '', items: [] }; cats.push(cur); }
-    last = { name: m[1].replace(/[.\-–—:·\s]+$/, '').trim(), price: fmt(m[2]), desc: '', hasDesc: false };
+    last = { name: m[1].replace(/[.\-–—:·\s]+$/, '').trim(), price: fmt(m[2], m[3]), desc: '', hasDesc: false };
     cur.items.push(last);
   } else if (prevBlank || !cur) {
     cur = { title: cap(line), items: [] }; cats.push(cur); last = null;
@@ -308,11 +448,19 @@ text.split(/\r?\n/).forEach((raw) => {
 });
 const nDish = cats.reduce((a, c) => a + c.items.length, 0);
 const tabs = [['da', 'Dansk'], ['de', 'Deutsch'], ['en', 'English']].map(([k, label]) => ({ label, active: lang === k, inactive: lang !== k, pick: () => this.setState({ lang: k }) }));
+const kinds = [['food', 'Mad'], ['drinks', 'Drikkevarer']].map(([k, label]) => ({ label, active: kind === k, inactive: kind !== k, pickKind: () => this.setState({ kind: k }) }));
+const isDrinks = kind === 'drinks';
 return {
-tabs, text, cats, empty: cats.length === 0,
-summary: cats.length ? `Fundet: ${cats.length} kategorier og ${nDish} retter.` : '',
-onText: (e) => this.setState({ texts: { ...texts, [lang]: e.target.value } }),
-reset: () => this.setState({ texts: { ...texts, [lang]: SAMPLE[lang] } }),
+tabs, kinds, text, cats, empty: cats.length === 0,
+textLabel: isDrinks ? 'Indsæt drikkekortet her' : 'Indsæt menukortet her',
+emptyMsg: isDrinks ? 'Indsæt drikkekortet i feltet til venstre.' : 'Indsæt menukortet i feltet til venstre.',
+summary: cats.length ? `Fundet: ${cats.length} ${cats.length === 1 ? 'kategori' : 'kategorier'} og ${nDish} ${isDrinks ? (nDish === 1 ? 'drikkevare' : 'drikkevarer') : (nDish === 1 ? 'ret' : 'retter')}.` : '',
+onText: (e) => this.setState({ texts: { ...texts, [key]: e.target.value } }),
+reset: () => this.setState({ texts: { ...texts, [key]: SAMPLE[key] } }),
+wpEvents: [
+{ label: 'Julefrokost', title: 'Julefrokost hos Mormor – eller hjemme hos jer', where: [{ k: 'I restauranten', on: true, off: false }, { k: 'Mad ud af huset', on: true, off: false }, { k: 'Takeaway', on: false, off: true }], when: 'Fredage og lørdage · [dato] – [dato]', text: 'Det gammeldags julebord, lavet fra bunden. Hold julefrokosten i stuen ved vandet – eller få maden bragt ud.', note: 'Fra [antal] personer · [pris] kr. pr. kuvert', pdf: 'julefrokost.pdf', until: '[20.12.2026]' },
+{ label: 'Nytårsmenu', title: 'Nytårsmenu til at tage med hjem', where: [{ k: 'I restauranten', on: false, off: true }, { k: 'Mad ud af huset', on: false, off: true }, { k: 'Takeaway', on: true, off: false }], when: 'Afhentes 31. december kl. [12–15]', text: 'Festmenuen er lavet på forhånd. Retterne følger med en enkel vejledning til at varme og anrette dem derhjemme.', note: 'Bestil senest [dato] · Tilberedningsvejledning følger med', pdf: 'nytaarsmenu.pdf', until: '31.12.2026' }
+],
 pdfs: [
 { lang: 'Dansk menukort', file: 'menukort-mormors-landkoekken.pdf', meta: 'Uploadet [dato] · 240 KB' },
 { lang: 'Speisekarte (tysk)', file: 'speisekarte-mormors-landkoekken.pdf', meta: 'Uploadet [dato] · 230 KB' },
@@ -336,7 +484,10 @@ pdfs: [
       });
       h+='</div>';
     });
-    if(!v.cats.length) h='<span style="color:#5B6663">Indsæt menukortet i feltet til venstre.</span>';
+    if(!v.cats.length) h='<span style="color:#5B6663">'+e(v.emptyMsg)+'</span>';
+    var lab=document.querySelector('label[for="ml-menu-text"]'); if(lab) lab.textContent=v.textLabel;
+    var curK=(c.state.kind||'food');
+    document.querySelectorAll('.wp-kinds button').forEach(function(b){var on=b.getAttribute('data-kind')===curK;b.setAttribute('aria-pressed',on);b.style.background=on?'#2271B1':'transparent';b.style.color=on?'#FFFFFF':'#2271B1';b.style.fontWeight=on?'600':'400'});
     prev.innerHTML=h; sum.textContent=v.summary;
     // tabs
     document.querySelectorAll('[data-on="pick"]').forEach(function(b){
@@ -350,10 +501,14 @@ pdfs: [
   tabList.innerHTML=['Dansk','Deutsch','English'].map(function(l){return '<button type="button" role="tab" data-on="pick" style="min-height:40px;padding:0 18px;border:1px solid transparent;background:transparent;font:inherit;cursor:pointer">'+l+'</button>'}).join('');
   var map={'Dansk':'da','Deutsch':'de','English':'en'};
   tabList.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){c.setState({lang:map[b.textContent]})})});
-  function defaults(){var x=new Comp();var o={};['da','de','en'].forEach(function(l){x.state={lang:l};o[l]=x.renderVals().text});return o}
+  var kindBox=document.querySelector('.wp-kinds');
+  kindBox.innerHTML=[['food','Mad'],['drinks','Drikkevarer']].map(function(k){return '<button type="button" data-kind="'+k[0]+'" aria-pressed="false" style="min-height:34px;padding:0 18px;border:none;border-radius:4px;background:transparent;color:#2271B1;font:inherit;cursor:pointer">'+k[1]+'</button>'}).join('');
+  kindBox.querySelectorAll('button').forEach(function(b){b.addEventListener('click',function(){c.setState({kind:b.getAttribute('data-kind')})})});
+  function curKey(){return (c.state.kind||'food')+':'+(c.state.lang||'da')}
+  function defaults(){var x=new Comp();var o={};['food','drinks'].forEach(function(k){['da','de','en'].forEach(function(l){x.state={lang:l,kind:k};o[k+':'+l]=x.renderVals().text})});return o}
   var texts=defaults();
-  ta.addEventListener('input',function(){texts[c.state.lang||'da']=ta.value;c.setState({texts:Object.assign({},texts)})});
-  document.querySelector('[data-on="reset"]').addEventListener('click',function(){var d=defaults();var l=c.state.lang||'da';texts[l]=d[l];c.setState({texts:Object.assign({},texts)})});
+  ta.addEventListener('input',function(){texts[curKey()]=ta.value;c.setState({texts:Object.assign({},texts)})});
+  document.querySelector('[data-on="reset"]').addEventListener('click',function(){var d=defaults();var k=curKey();texts[k]=d[k];c.setState({texts:Object.assign({},texts)})});
   draw();
 })();
 </script>
