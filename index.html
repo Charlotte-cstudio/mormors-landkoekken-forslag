@@ -45,16 +45,17 @@ img{max-width:100%}
   .m-root > nav[aria-label="Hurtige handlinger"]{position:fixed !important;left:0;right:0;bottom:0;max-width:600px;margin:0 auto}
 }
 .preview-bar{position:fixed;right:16px;bottom:16px;z-index:50;background:#1C2B28;color:#F4EFE8;font:600 12px/1.3 'Nunito Sans',sans-serif;padding:8px 14px;border-radius:999px;opacity:.85}
-@media (max-width: 899px){.preview-bar{bottom:90px;left:50%;transform:translateX(-50%)}}
+@media (max-width: 899px){.preview-bar{position:static;display:block;text-align:center;border-radius:0;opacity:1;font-size:11px;padding:6px 12px}}
 </style>
 </head>
 <body>
+<div class="preview-bar">Designforslag fra C Studio · ikke en færdig hjemmeside</div>
 <div class="v-desktop">
 
 <div style="background: #FCFCFA; color: #1C2B28; font-family: 'Nunito Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.7">
 
 <header style="background: #FCFCFA">
-<div style="max-width: 1280px; margin: 0 auto; padding: 22px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
+<div style="max-width: 1280px; margin: 0 auto; padding: 14px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px">
 <a href="#top" aria-label="Mormors Landkøkken – til forsiden" style="display: flex; align-items: center; min-height: 44px"><img src="logo-moerk.png" alt="Mormors Landkøkken" style="width: 230px; height: auto; display: block"></a>
 <nav aria-label="Hovedmenu" style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px; font-size: 15px; font-weight: 600">
 <a href="#menukort" style="text-decoration: none">Menukort</a>
@@ -68,23 +69,23 @@ img{max-width:100%}
 </header>
 
 <section id="top" aria-label="Velkommen" style="padding: 0 24px">
-<div style="max-width: 1392px; margin: 0 auto; min-height: 680px; border-radius: 32px; overflow: hidden; background: #1C2B28; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr))">
-<div style="grid-column: span 5; padding: 64px 48px 56px 64px; display: flex; flex-direction: column; justify-content: center; gap: 24px; color: #FFFFFF; min-width: 0">
-<div class="ml-ill" style="align-self: flex-start; margin: -12px 0 -14px -14px"><svg aria-hidden="true" viewBox="0 0 200 200" width="128" height="128" fill="none" style="display: block; pointer-events: none; overflow: visible; transform: rotate(-4deg);"><g transform="translate(4 3)" stroke="none"><path d="M36 97 C35 87 165 86 164 96 L160 98 C161 120 161 146 148 160 C137 172 63 172 52 160 C40 146 39 120 40 98 Z" fill="rgba(224,168,119,0.32)"></path><path d="M45 91 C49 64 151 63 156 90 Z" fill="rgba(224,168,119,0.6)"></path></g><g stroke="#F4EFE8" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="2.3"><path d="M40 98 C39 120 40 146 52 160 C63 172 137 172 148 160 C161 146 161 120 160 98"></path><path d="M36 97 C35 87 165 86 164 96 C165 106 37 108 36 97 Z"></path><path d="M45 91 C49 64 151 63 156 90"></path><path d="M89 66 C88 53 112 52 111 66"></path><path d="M41 110 C24 106 17 123 30 129 C34 131 39 129 42 127"></path><path d="M159 110 C176 106 183 123 170 129 C166 131 161 129 158 127"></path></g><g stroke-width="1.2" opacity="0.85"><path d="M58 118 C55 133 58 146 65 153"></path><path d="M68 76 C80 71 93 69 104 69"></path><path d="M138 118 L133 148"></path><path d="M146 116 L142 140"></path><path d="M130 122 L126 152"></path><path d="M80 48 C71 40 88 33 79 23"></path><path d="M100 44 C91 34 109 27 99 15"></path><path d="M121 48 C112 40 129 33 120 23"></path></g></g></svg></div>
+<div style="max-width: 1392px; margin: 0 auto; height: clamp(500px, calc(100vh - 150px), 720px); border-radius: 32px; overflow: hidden; background: #1C2B28; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr))">
+<div style="grid-column: span 5; padding: clamp(28px, 4.5vh, 64px) 40px clamp(24px, 4vh, 56px) clamp(32px, 4.5vw, 64px); display: flex; flex-direction: column; justify-content: center; gap: clamp(12px, 2.2vh, 24px); color: #FFFFFF; min-width: 0; overflow: hidden">
+<div class="ml-ill" style="align-self: flex-start; margin: -12px 0 -14px -14px; width: clamp(64px, 11vh, 128px)"><svg aria-hidden="true" viewBox="0 0 200 200" width="100%" fill="none" style="display: block; pointer-events: none; overflow: visible; transform: rotate(-4deg);"><g transform="translate(4 3)" stroke="none"><path d="M36 97 C35 87 165 86 164 96 L160 98 C161 120 161 146 148 160 C137 172 63 172 52 160 C40 146 39 120 40 98 Z" fill="rgba(224,168,119,0.32)"></path><path d="M45 91 C49 64 151 63 156 90 Z" fill="rgba(224,168,119,0.6)"></path></g><g stroke="#F4EFE8" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="2.3"><path d="M40 98 C39 120 40 146 52 160 C63 172 137 172 148 160 C161 146 161 120 160 98"></path><path d="M36 97 C35 87 165 86 164 96 C165 106 37 108 36 97 Z"></path><path d="M45 91 C49 64 151 63 156 90"></path><path d="M89 66 C88 53 112 52 111 66"></path><path d="M41 110 C24 106 17 123 30 129 C34 131 39 129 42 127"></path><path d="M159 110 C176 106 183 123 170 129 C166 131 161 129 158 127"></path></g><g stroke-width="1.2" opacity="0.85"><path d="M58 118 C55 133 58 146 65 153"></path><path d="M68 76 C80 71 93 69 104 69"></path><path d="M138 118 L133 148"></path><path d="M146 116 L142 140"></path><path d="M130 122 L126 152"></path><path d="M80 48 C71 40 88 33 79 23"></path><path d="M100 44 C91 34 109 27 99 15"></path><path d="M121 48 C112 40 129 33 120 23"></path></g></g></svg></div>
 <span style="display: inline-flex; align-items: center; gap: 12px; font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #E0A877"><span aria-hidden="true" style="width: 28px; height: 1px; background: #E0A877"></span>Havnevej 17 · Hejlsminde</span>
-<h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 56px; line-height: 1.06; letter-spacing: -0.015em; color: #F7F2EA">Gammeldags god mad, hygge og udsigt.</h1>
-<p style="margin: 0; font-size: 18px; line-height: 1.65; color: #DDD6CB; max-width: 440px">En lille restaurant ved vandet med retro-charme, levende lys og plads ved bordet. Maden er lavet fra bunden – og med kærlighed.</p>
+<h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(34px, min(4vw, 6.4vh), 56px); line-height: 1.06; letter-spacing: -0.015em; color: #F7F2EA">Gammeldags god mad, hygge og udsigt.</h1>
+<p style="margin: 0; font-size: clamp(15px, 2.1vh, 18px); line-height: 1.6; color: #DDD6CB; max-width: 440px">En lille restaurant ved vandet med retro-charme, levende lys og plads ved bordet. Maden er lavet fra bunden – og med kærlighed.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 4px">
 <a class="ml-btn" href="tel:+4573540000" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 30px; border-radius: 999px; border: 1px solid #A85F33; background: #A85F33; color: #FFFFFF; text-decoration: none; font-weight: 700">Ring og bestil bord</a>
 <a class="ml-ghost-l" href="#menukort" style="display: inline-flex; align-items: center; min-height: 56px; padding: 0 30px; border-radius: 999px; border: 1px solid #F7F2EA; color: #F7F2EA; text-decoration: none; font-weight: 700">Se menukortet</a>
 </div>
-<div style="display: flex; align-items: center; gap: 12px; padding-top: 20px; border-top: 1px solid rgba(247,242,234,0.14); font-size: 15px; color: #D9D2C7">
+<div style="display: flex; align-items: center; gap: 12px; padding-top: clamp(10px, 2vh, 20px); border-top: 1px solid rgba(247,242,234,0.14); font-size: 15px; color: #D9D2C7">
 <span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: var(--status-dot); box-shadow: 0 0 0 5px var(--status-ring)"></span>
 <span><strong style="font-weight: 700; color: #F7F2EA"><span class="js-status-head"></span></strong> <span class="js-status-sub"></span></span>
 </div>
 </div>
 <div style="grid-column: 6 / span 7; padding: 16px 16px 16px 0; display: flex">
-<figure class="ml-fig" style="margin: 0; position: relative; flex: 1; overflow: hidden; border-radius: 22px; min-height: 648px; background: #2A3A36">
+<figure class="ml-fig" style="margin: 0; position: relative; flex: 1; overflow: hidden; border-radius: 22px; min-height: 0; background: #2A3A36">
 <img class="ml-img" src="restaurant-hero.jpg" alt="Restauranten med gamle ure, platter og levende lys på bordene" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 40% 45%; display: block">
 <figcaption style="position: absolute; left: 20px; bottom: 20px; display: inline-flex; align-items: center; gap: 10px; padding: 10px 16px 10px 12px; border-radius: 999px; background: rgba(28,43,40,0.82); color: #F7F2EA; font-size: 14px; font-weight: 600"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #E0A877"></span>Stuen hos Mormors Landkøkken</figcaption>
 </figure>
@@ -92,7 +93,7 @@ img{max-width:100%}
 </div>
 </section>
 
-<div aria-hidden="true" style="height: 24px"></div>
+<div aria-hidden="true" style="height: 20px"></div>
 
 <div aria-hidden="true" style="height: 24px"></div>
 
@@ -1000,10 +1001,10 @@ img{max-width:100%}
 
 <section id="m-top" style="padding: 10px 10px 0">
 <div style="border-radius: 24px; overflow: hidden; background: #1C2B28">
-<img src="restaurant-mobil.jpg" alt="Restauranten med gamle ure, platter og levende lys" style="width: 100%; height: 300px; object-fit: cover; display: block">
-<div style="padding: 26px 20px 24px; display: flex; flex-direction: column; gap: 14px; color: #FFFFFF">
+<img src="restaurant-mobil.jpg" alt="Restauranten med gamle ure, platter og levende lys" style="width: 100%; height: clamp(150px, 26vh, 300px); object-fit: cover; display: block">
+<div style="padding: clamp(18px, 3vh, 26px) 20px clamp(18px, 3vh, 24px); display: flex; flex-direction: column; gap: clamp(10px, 1.7vh, 14px); color: #FFFFFF">
 <span style="display: inline-flex; align-items: center; gap: 10px; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 700; color: #F0C9A6"><span aria-hidden="true" style="width: 20px; height: 1px; background: #F0C9A6"></span>Havnevej 17 · Hejlsminde</span>
-<h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.07">Gammeldags god mad, hygge og udsigt.</h1>
+<h1 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: clamp(28px, 8.4vw, 36px); line-height: 1.07">Gammeldags god mad, hygge og udsigt.</h1>
 <p style="margin: 0; color: #EDE6DC; font-size: 15px">En lille restaurant ved vandet med retro-charme og levende lys på bordene.</p>
 <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 14px; color: #EDE6DC"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: var(--status-dot); box-shadow: 0 0 0 4px var(--status-ring)"></span><strong style="font-weight: 700; color: #FFFFFF"><span class="js-status-head"></span></strong><span class="js-status-sub"></span></span>
 <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding-top: 4px">
@@ -1699,7 +1700,6 @@ img{max-width:100%}
 </div>
 
 </div>
-<div class="preview-bar">Designforslag fra C Studio · ikke en færdig hjemmeside</div>
 <script>
 (function(){
   // opening status
